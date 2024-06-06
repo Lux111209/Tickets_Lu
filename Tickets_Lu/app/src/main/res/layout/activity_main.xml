@@ -8,15 +8,53 @@
     android:background="@drawable/background_register"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:hint="    Nombre"
+        android:inputType="text"
+        app:circularflow_defaultRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:hint="    Correo electrónico"
+        android:inputType="text"
+        app:circularflow_defaultRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
+
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/baloo_bhai_2_bold"
         android:shadowColor="#989696"
         android:stateListAnimator="@android:anim/cycle_interpolator"
-        android:text="Iniciar Sesión"
+        android:text="Registrarme"
         android:textColor="#E1665D"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,25 +62,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="135dp"
-        android:layout_height="46dp"
-        android:backgroundTint="#E0665D"
-        android:fontFamily="@font/baloo_bhai_2_bold"
-        android:shadowColor="#FFFFFF"
-        android:text="Registrarse"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
-        app:strokeColor="#FFFFFF"
-        app:strokeWidth="1dp" />
+        app:layout_constraintVertical_bias="0.96" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -54,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/textView"
@@ -66,9 +86,40 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.049" />
+
+    <EditText
+        android:id="@+id/txtContrasena"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/text"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:hint="    Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
+    <EditText
+        android:id="@+id/txtConfirmarContrasena"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/text"
+        android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2"
+        android:hint="    Confirmar contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
