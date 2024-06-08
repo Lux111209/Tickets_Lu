@@ -1,6 +1,7 @@
 package luz.gaspario.tickets_lu
 
 import Modelo.ClaseConexion
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ import kotlinx.coroutines.withContext
 import java.util.UUID
 
 class Login : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,9 +31,9 @@ class Login : AppCompatActivity() {
         }
         val txtNombre = findViewById<EditText>(R.id.txtNombre)
         val txtContrasena = findViewById<EditText>(R.id.txtContrasena)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
+        val btnIniciar = findViewById<Button>(R.id.btnIniciar)
 
-        btnRegister.setOnClickListener {
+        btnIniciar.setOnClickListener {
             val nombre = txtNombre.text.toString()
             val contrasena = txtContrasena.text.toString()
 
@@ -42,17 +44,18 @@ class Login : AppCompatActivity() {
             }
         }
 
-        btnRegister.setOnClickListener {
+        btnIniciar.setOnClickListener {
+            val pantallaPrincipal = Intent(this, Tickets::class.java)
             CoroutineScope(Dispatchers.IO).launch {
                 val objConexion = ClaseConexion().cadenaConexion()
-                val ComprobarUsuario = objConexion?.prepareStatement("select * from into Usuario where nombreUsuario = ? contrasenaUsuario = ?")!!
+                val ComprobarUsuario = objConexion?.prepareStatement("select * from Usuario where nombreUsuario = ? AND contrasenaUsuario = ?")!!
 
                 ComprobarUsuario.setString(1, txtNombre.text.toString())
                 ComprobarUsuario.setString(2, txtContrasena.text.toString())
 
                 val resultado = ComprobarUsuario.executeQuery()
                 if (resultado.next()){
-                    startActivity(panta)
+                    startActivity(pantallaPrincipal)
                 }
                 withContext(Dispatchers.Main){
                     Toast.makeText(this@Login, "Se ha creado un usuario", Toast.LENGTH_SHORT).show()
@@ -60,8 +63,7 @@ class Login : AppCompatActivity() {
                     txtNombre.setText("")
                     txtContrasena.setText("")
                 }
-
-                btnRegister.setOnClickListener {
+                btnIniciar.setOnClickListener {
                     val pantallaLogin = Intent(this@Login, Login::class.java)
                     startActivity(pantallaLogin)
                 }

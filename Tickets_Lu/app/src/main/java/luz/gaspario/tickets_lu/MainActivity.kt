@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         btnRegister.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val objConexion = ClaseConexion().cadenaConexion()
-                val addUsuario = objConexion?.prepareStatement("insert into Usuario (uuid, nombreUsuario, contrasenaUsuario) values (?, ?, ?)")!!
+                val addUsuario = objConexion?.prepareStatement("insert into Usuario (UUID_Usuario, nombreUsuario, contrasenaUsuario) values (?, ?, ?)")!!
 
                 addUsuario.setString(1, UUID.randomUUID().toString())
                 addUsuario.setString(2, txtNombre.text.toString())
