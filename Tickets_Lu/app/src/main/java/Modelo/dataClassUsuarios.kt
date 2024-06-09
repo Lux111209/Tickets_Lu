@@ -2,7 +2,7 @@ package Modelo
 
 class dataClassUsuarios (
     val uuid:String,
-    val nombreUsuario:String,
-    val contrasenaUsuario:String
+    var nombreUsuario:String,
+    var contrasenaUsuario:String
 
 )
